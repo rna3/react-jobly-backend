@@ -14,8 +14,8 @@ let DB_URI = process.env.DB_URI;
 // Use dev database, testing database, or via env var, production database
 function getDatabaseUri() {
   return (process.env.NODE_ENV === "test")
-      ? `${DB_URI}/jobly_test`
-      : `${DB_URI}/jobly`;
+      ? `${DB_URI}_test`
+      : DB_URI;
 }
 
 // Speed up bcrypt during tests, since the algorithm safety isn't being tested
